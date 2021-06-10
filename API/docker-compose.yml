@@ -12,8 +12,8 @@ services:
     tty: true
     entrypoint: tail -f /dev/null
     networks:
-      - kafka-workshop
+      - workshop
 
 networks:
-  kafka-workshop:
+  workshop:
     external: true

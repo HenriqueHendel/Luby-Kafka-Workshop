@@ -9,8 +9,8 @@ services:
       - ./:/src/simulator
     entrypoint: tail -f /dev/null
     networks:
-      - kafka-workshop
+      - workshop
 
 networks:
-  kafka-workshop:
+  workshop:
     external: true

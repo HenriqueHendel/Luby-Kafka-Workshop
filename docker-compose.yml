@@ -3,7 +3,7 @@ services:
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     networks:
-      - kafka-workshop
+      - workshop
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -11,7 +11,7 @@ services:
   kafka:
     image: confluentinc/cp-kafka:latest
     networks:
-      - kafka-workshop
+      - workshop
     depends_on:
       - zookeeper
     ports:
@@ -27,7 +27,7 @@ services:
   kafdrop:
     image: obsidiandynamics/kafdrop:latest
     networks:
-      - kafka-workshop
+      - workshop
     depends_on:
       - kafka
     ports:
@@ -36,5 +36,5 @@ services:
       KAFKA_BROKERCONNECT: kafka:29092
 
 networks:
-  kafka-workshop:
+  workshop:
     external: true

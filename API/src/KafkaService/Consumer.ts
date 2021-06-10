@@ -15,7 +15,7 @@ export default class Consumer {
 
   constructor({ groupId }: IConsumer) {
     const kafka = new Kafka({
-      brokers: ["workshop_kafka_1:29092"],
+      brokers: ["luby-kafka-workshop_kafka_1:29092"],
     });
 
     this.consumer = kafka.consumer({ groupId });

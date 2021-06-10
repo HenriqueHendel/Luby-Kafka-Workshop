@@ -11,7 +11,7 @@ services:
       - ./:/src/ms_storage
     entrypoint: tail -f /dev/null
     networks:
-      - kafka-workshop
+      - workshop
 
   postgres:
     container_name: postgres
@@ -23,8 +23,8 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=storage
     networks:
-      - kafka-workshop
+      - workshop
 
 networks:
-  kafka-workshop:
+  workshop:
     external: true
